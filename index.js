@@ -7,9 +7,13 @@ var pairingKey = require("./pairingKey.json");
 var Client = require("node-ssdp").Client;
 
 class LgRemote {
-  constructor(address) {
+  constructor(address,pairingKey) {
     this.address = address;
-    this.pairingKey = pairingKey;
+    if(pairingKey){
+      this.pairingKey = pairingKey;
+    }else{
+      this.pairingKey = file_pairingKey;
+    }
 
     function udapRequest(action, body) {
       return (action === "command" ? authorizifiedFetch : fetch)(
