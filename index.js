@@ -2,7 +2,7 @@ var fs = require("fs");
 var builder = require("xmlbuilder");
 var fetch = require("node-fetch");
 var xml2js = require("xml2js");
-var pairingKey = require("./pairingKey.json");
+var file_pairingKey = require("./pairingKey.json");
 
 var Client = require("node-ssdp").Client;
 
